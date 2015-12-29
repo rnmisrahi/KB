@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Client_Config.Models;
-using Client_Config.InventoryServices;
+using Client_Config.InventoryServiceReference;
 
 namespace Client_Config.Controllers
 {
@@ -12,17 +12,22 @@ namespace Client_Config.Controllers
     {   
         public ActionResult Index()
         {
-            InventoryServices.InventoryClient client = new InventoryServices.InventoryClient();
+            InventoryClient client = new InventoryClient();
             var items = client.DbGetItems();
             return View(items);
         }
 
-        //public ActionResult Delete(int id)
-        //{
-        //    InventoryClient client = new InventoryClient();
-        //    client.DbRemoveItem(id);
-        //    return null;
-        //}
+        public ActionResult CheckItemName(Item item)
+        {
+            if (item.ItemName.Contains("a"))
+            {
+                return Json(string.Format("{0} is reserved, enter another name", item.ItemName), JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+        }
 
         public ActionResult DeleteItems()
         {
@@ -34,7 +39,7 @@ namespace Client_Config.Controllers
 
         public ActionResult Details(int id)
         {
-            InventoryServices.InventoryClient client = new InventoryServices.InventoryClient();
+            InventoryClient client = new InventoryClient();
             var item = client.DbGetItems().FirstOrDefault(m => m.ItemId == id);
             return View(item);
         }
@@ -49,7 +54,7 @@ namespace Client_Config.Controllers
 
         public ActionResult Edit(int id)
         {
-            InventoryServices.InventoryClient client = new InventoryServices.InventoryClient();
+            InventoryClient client = new InventoryClient();
             var item = client.DbGetItem(id);
             return View(item);
         }

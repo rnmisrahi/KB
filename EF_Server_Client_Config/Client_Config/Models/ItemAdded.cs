@@ -1,4 +1,4 @@
-﻿using Client_Config.InventoryServices;
+﻿using Client_Config.InventoryServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;

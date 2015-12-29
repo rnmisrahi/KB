@@ -9,44 +9,6 @@ namespace ServerConfig
 {
     public class Inventory : IInventory
     {
-        public string GetMessage()
-        {
-            return "Shalom client";
-        }
-
-        public int AddItem(String name, int quantity)
-        {
-            int nextId = InventoryContext.getNextId();
-            Item item = new Item { ItemId = nextId, ItemName = name, Quantity = quantity };
-            InventoryContext.Items.Add(item);
-            return nextId;
-        }
-
-        public int AddQuantity(int id, int quantity)
-        {
-            Item item = InventoryContext.Items.FirstOrDefault(m => m.ItemId == id);
-            item.Quantity += quantity;
-            return quantity;
-        }
-
-        public int SubtractQuantity(int itemId, int quantity)
-        {
-            return AddQuantity(itemId, -quantity);
-        }
-
-        public List<Item> GetItems()
-        {
-            List<Item> items = new List<Item>();
-            items = InventoryContext.Items;
-            return items;
-        }
-
-        public void RemoveItem(int id)
-        {
-            Item item = InventoryContext.Items.FirstOrDefault(m => m.ItemId == id);
-            InventoryContext.Items.Remove(item);
-        }
-
         public int DbAddItem(string name, int quantity)
         {
             DbInventoryContext context = new DbInventoryContext();

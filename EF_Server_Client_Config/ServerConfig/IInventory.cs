@@ -12,25 +12,6 @@ namespace ServerConfig
     interface IInventory
     {
         [OperationContract]
-        string GetMessage();
-
-        [OperationContract]
-        int AddItem(String name, int quantity);
-
-        [OperationContract]
-        int AddQuantity(int itemId, int quantity);
-
-        [OperationContract]
-        int SubtractQuantity(int itemId, int quantity);
-
-        [OperationContract]
-        List<Item> GetItems();
-
-        [OperationContract]
-        void RemoveItem(int id);
-
-        //////////////// DB BASED ///////////////
-        [OperationContract]
         int DbAddItem(String name, int quantity);
 
         [OperationContract]
