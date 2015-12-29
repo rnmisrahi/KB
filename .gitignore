@@ -1,0 +1,14 @@
+# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
+*.zip
+*.exe
+*.zip_
+*.exe_
+*.pdb
+*.dll
+*.log
+*.bak
+*.exe.config
+*.rar
+bin
+obj
+packages
