@@ -71,9 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IInventory.cs" />
-    <Compile Include="IInventoryService.cs" />
     <Compile Include="Inventory.cs" />
-    <Compile Include="InventoryService.cs" />
     <Compile Include="Migrations\201512210925211_InitialCreate.cs" />
     <Compile Include="Migrations\201512210925211_InitialCreate.Designer.cs">
       <DependentUpon>201512210925211_InitialCreate.cs</DependentUpon>
@@ -83,10 +81,8 @@
       <DependentUpon>201512271621102_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\InventoryContext.cs" />
     <Compile Include="Models\DbInventoryContext.cs" />
     <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\ItemRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
