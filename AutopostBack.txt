@@ -1,0 +1,13 @@
+AutoPostBack
+------------
+
+http://www.dotnetspider.com/resources/189-AutoPostBack-What-How-works.aspx
+
+Autopostback is the mechanism, by which the page will be posted 
+back to the server automatically based on some events in the web controls.
+
+How can this be used? For instance, a Dropdown list or group of radio buttons where the action requires us
+to go to the Server and fill the rest of the screen with additional data, would need to have AutoPostBack=true
+
+Example:
+<asp:DropDownList ID="ddlStatus" runat="server" AutoPostBack="true">

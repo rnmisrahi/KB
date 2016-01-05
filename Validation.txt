@@ -1,0 +1,63 @@
+Validation with Asp Web Forms
+-----------------------------
+
+https://msdn.microsoft.com/library/a0z2h4sw(v=vs.100).aspx
+
+
+These are the type of validations in web forms:
+
+RequieredFieldValidator	
+Uses InitialValue [Validation fails only if the value of the associated input control 
+	matches this InitialValue upon losing focus. This can be useful with dropdown lists,
+	where we may have as the first selection something like: "Pick a Country", etc.]
+Most common of all
+
+RangeValidator
+Uses MaximumValue, MinimumValue, Type
+
+RegularExpressionValidator
+Uses ValidationExpression, a regular expression, such as "\d{5}"
+
+CompareValidator
+ControlToCompare
+Type (String, Integer...)
+Operator (Equal, NotEqual, GreaterThan, LessThan, GreaterThanEqual, LessThanEqual, DataTypeCheck)
+
+CustomValidator - Can use validation on the Client (JavaScript) or at the Server:
+OnServerValidate="<Name of the protected, such as ServerValidation, with the signature as shown>"
+	protected ServerValidator(object source, ServerValidateEventArgs e){
+		e.IsValid=false;//Because the default is true
+		e.Value
+	}
+CustomValidator: ClientValidationFunction=<Name of the JavaScript function>
+	<script....
+		function ClientValidator(source, args){
+			args.Value
+			args.IsValid
+		}
+
+
+ValidationSummary
+It displays all the validation fails in a page
+DisplayMode(BulletList, List, SingleParagraph)
+HeaderText
+ErrorMessage
+ShowSummary(true/false)
+ShowMessageBox(true/false)
+(All other Validators set the ErrorMessage that will be used by this Validator)
+
+
+
+All of them use the attributes
+	ID
+	Text [Can be in the text tag or between the tags of the element, not both]
+	
+All of them, except for ValidationSummary use the attributes 
+	SetFocusOnError (true/false)
+	ControlToValidate (ID of the control being validated)
+	Display (Static, Dynamic, none)
+	ErrorMessage (The error that will be displayed in the list displayed by ValidationSummary)
+
+
+* There is something called Validation with inheritance
+

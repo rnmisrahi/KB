@@ -1,0 +1,99 @@
+Web Form Navigation
+-------------------
+http://odetocode.com/articles/421.aspx
+
+There are several ways to navigate from one page to another:
+
+1. Server.Transfer
+<asp:Button ... OnCLick="BtnServerTransfer_Click"
+	protected void btnServerTransfer_Click(object sender, EventArgs e)
+	 {
+		 Server.Transfer("TargetPage.aspx");
+	 }
+//This is newer. It's more efficient, but it cannot go to another website on the web.
+//This is a PostBack
+
+
+2. Response.Redirect
+<asp:Button ... OnCLick="btnRedirect_Click"
+	protected void btnRedirect_Click(object sender, EventArgs e)
+	 {
+		 Response.Redirect("TargetPage.aspx");
+	 }
+//This is historic. It creates a new request
+//It send the request to the Server so the Server makes the Client to request the next page
+
+
+3. Cross-Page Post
+	<asp:Button ID="btnCrossPage" runat="server" 
+	Text="Cross-Page Post" 
+	PostBackUrl="TargetPage.aspx" />
+//This one send the form itself 
+
+
+Transfering some information between pages.
+If we need to transfer some information from page Default to page Target, these are the possibilities
+Response.Redirect doesn't allow
+Server.Transfer and Cross-Page Post allow it
+
+The Target page needs to have the following line:
+<%@ PreviousPageType  VirtualPath="~/Default.aspx" %>  
+
+If the Target page wants to access elements from the source page (Default in our example), it 
+	needs to have this, typically on its Page_Load method:
+	
+  if (Page.PreviousPage != null)
+      if (Page.PreviousPage.IsValid)
+      {
+          lblActivity.Text = PreviousPage.FavoriteActivity.SelectedItem.ToString();
+      }
+      else
+          lblActivity.Text = "Prev not valid";	
+
+To do this, FavoriteActivity needs to be declared in the Default page as follows:
+	public DropDownList FavoriteActivity
+	{
+		get { return ddlFavoriteActivity; }
+	}
+
+
+Under Response.Redirect the Target doesn't even receive the PreviousPage
+Under Server.Transfer and Cross-Page it receives the PreviousPage
+
+
+To avoid having to create a public method that returns a specific control, we use Late Binding.
+In that case we get the controls using the method FindControl(<ID of the control>) as follows
+    protected void Page_Load(object sender, EventArgs e)
+    {
+		 if (Page.PreviousPage != null)
+		 {
+			 DropDownList ddl = (DropDownList)Page.PreviousPage.FindControl("ddlFavoriteActivity");
+			 if (ddl != null)
+				 lblActivity.Text = ddl.SelectedItem.ToString() + " (late-bound)";
+		 }
+    }
+
+4. GoToTargetPage
+	<a href="TargetPage.aspx">Go to Target page</a>
+This is the simplest and more known way to navigate to another page
+
+Important Page Properties:
+IsPostBack is a page attribute that tells us whether the page is in its initial load or if 
+	the user has performed a button that has called PostBack, such as settin the 
+	AutoPostBack attribute in a dropdown control
+	
+IsCrossPagePostBack is a page attribute that tells us if the page was posted by another page 
+	using cross-page postback
+
+
+Page.PreviousPage is the Page that originated the call to the current page.
+
+
+<%@ PreviousPageType VirtualPath="~Default.aspx" %>
+
+
+Late-Bound is another way to tranfer info from page to page without the directive above
+It uses FindControl
+
+
+

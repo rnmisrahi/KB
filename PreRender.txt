@@ -1,0 +1,11 @@
+PreRender
+---------
+
+It's an event of a web form that is called (it's a callback) before the page is rendered.
+It Performs any updates before the output is rendered.
+
+The major difference between Page_Load and Page_PreRender is that in the Page_Load method 
+	not all of your page controls are completely initialized (loaded), because individual 
+	controls Load() methods has not been called yet.
+	
+	

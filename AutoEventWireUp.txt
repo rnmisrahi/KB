@@ -1,0 +1,22 @@
+AutoEventWireup
+---------------
+
+https://support.microsoft.com/en-us/kb/324151
+
+It's an attribute of the Page. If true, all the event handlers of the Page 
+	are called and we can code them. This is convenient but it could use some 
+	resources, because all those events are called. Events such as Page_load, 
+	Page_init, PreLoad, PreRenderComplete, etc.
+	
+We can add our own events instead of using AutoventWireUp as follows:
+    override protected void OnInit(EventArgs e)
+    {
+        this.Load += new System.EventHandler(this.Page_Load);
+    }
+
+
+PreRender is called after Page_Load, which allows us to then "see" the controls
+	already loaded.
+	
+	
+	
