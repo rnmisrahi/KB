@@ -48,7 +48,7 @@ ShowMessageBox(true/false)
 
 
 
-All of them use the attributes
+ALL of them use the attributes
 	ID
 	Text [Can be in the text tag or between the tags of the element, not both]
 	

@@ -1,0 +1,22 @@
+Setting the VPN with the ASUS router and HMA (Hide My Ass)
+
+A: The modem needs to be setup to support a VPN with a specific VPN IP address
+B: The HMA website is used to determine the correct VPN Address, which needs to be selected among several Servers
+
+A: Modem
+The IP address we have now is the default: 192.168.1.1usr/pwd are the default as well: admin/admin
+
+The instructions on how to setup the modem are clearly explained in this website:
+https://support.hidemyass.com/hc/en-us/articles/204449557-Asus-VPN-Client-Setup-Original-firmware-
+
+B: HMA
+The HMA site is: https://vpn.hidemyass.com/vpncontrol/signin
+usr/pwd is rnmisrahi/Uladi111
+
+The HMA site refers to this site and explains how to go about selecting the VPN we want to use.
+The name of the HMA server has this form: <state>.us.hma.rocks or random.<state>.us.hma.rocks, like
+al.us.hma.rocks for Alabama or
+random.us.ca.hma.rocks
+
+
+

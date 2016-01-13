@@ -1,0 +1,51 @@
+WPF: Windows Presentation Foundation
+------------------------------------
+
+Foundation: Is a set of libraries
+
+WPF is not totally restricted to desktop apps, because WPF -like any deskptop app- can make 
+	WCF calls.
+
+Based on DirectX.
+	DirectX was the technology used to provide fast graphics for games. It used hardware capabilities 
+	to speed up the rendenring.
+
+
+Benefits:
+- Performance
+- It solves the problem of different resolutions
+- Separation of UI and code
+
+XAML is compiled before its shown
+
+xmlns is xml name space
+
+It uses dips as "pixels". The width and height of controls are given in dips, which are 1/96 of an inch
+
+There are Content Controls that can contain other controls
+It inherits the class ContentControl
+
+
+Content Controls: They can congain only one control
+Window, Button, CheckBox, 
+
+Children Control - They contain several controls
+StackPanel (All Panels), Grid
+
+Text Control
+Text
+
+
+
+ContentControl is an Abstract Class. Nevertheless we can put one in a window.
+
+
+
+Attached Property
+This is used by Canvas. It has a dictionary for all the controls in it with the attributes Left and Top
+There is a dictionary for Left, one for right, etc. for Canvas
+
+
+
+
+
