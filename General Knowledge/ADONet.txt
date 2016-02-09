@@ -1,0 +1,42 @@
+ADONET
+------
+
+1. What is the difference between dataset and data reader?
+		DataReader is used to read the data from database and it is a read and forward 
+		only connection oriented architecture during fetch the data from database.
+		DataSet is a disconnected orient architecture that means there is no need of 
+		active connections during work with datasets and it is a collection of 
+		DataTables and relations between tables.
+
+2. What is the use of command object?
+		The Command Object in ADO.NET executes SQL statements and Stored Procedures 
+		against the data source specified in the C# Connection Object. The Command Object 
+		requires an instance of a C# Connection Object for executing the SQL statements.
+
+3. What is Dataset object?
+		An ADO.NET DataSet contains a collection of zero or more tables represented by 
+		DataTable objects. The DataTableCollection contains all the DataTable objects in 
+		a DataSet. A DataTable is defined in the System.Data namespace and represents a 
+		single table of memory-resident data.
+
+4. How can we save all data from Dataset?
+		ds.AcceptChanges(); //Commits all changes made to the dataset
+		ds.WriteXml(<string>); //Writes (saves) the dataset to an Xml file that can be
+		retrieved with ds.ReadXml(<string>);
+		
+4a.	What is the basic use of DataView?
+		A DataView enables you to create different views of the data stored in a DataTable, 
+		a capability that is often used in data-binding applications. Using a DataView, you 
+		can expose the data in a table with different sort orders, and you can filter the 
+		data by row state or based on a filter expression.
+
+5. What is the use of Command Builder?
+		It's used to generate automatic Update, Insert and Delete queries, but only
+		applies to queries for single tables.
+	
+6. How do you define an integer in SQL Server?
+		There is Int16, Int32 and Int64 (SmallInt, Int and BigInt).
+		
+
+
+

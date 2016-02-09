@@ -1,0 +1,81 @@
+- Server is an application that listents to requests and returns objects, usually as text.
+Eg: Sql Server, IIS, every WCF
+
+- Client. The program that makes the requests to the server.
+
+- Logical Port. Number that the OD assigns to the server
+
+- Http the protocol that defines how to make a web request
+
+- How does an Http look? Defines a web request. It sends the address, send cookies if there are any, send details of the browser, send parameters. Sends headers.
+
+- How do we send a Get and a Post.
+Get are sent as part of the URL.
+POST are sent in the body of the request.
+
+- Is Post secure?
+	Nope.
+
+Angular.js replies web Apis using Json 
+
+* Review Bootstrap
+
+- What is IIS?
+	It's a MS Server
+
+- Why do we need ISS Express?
+	It's not open to the Web. It's light weight.
+
+- What is ASP.Net?
+	MS's Internet technology.
+	There is WebForms and MVC
+
+- MVC Definition:
+	MS Technology to show Views
+	Architecture or Design Pattern
+	Pattern in Visual Studio
+
+
+30. Attribute
+		Describes the metadata.
+		Who uses attributes? External tools use them and especially, the Dynamic is an object.
+		Lehatziv bo at runtime 
+		object a=5;
+		a="xyx"; //ok
+		a.Show();//Not ok.
+		Dynamic was invented so it can work with Office ***
+		
+40. Objects with ID, it's forbidden to change the ID (Or not). When is it ok and when not.
+		
+54. Who delets the cookie?
+		OS
+
+60. What is the problem with Global Name Pollution.
+		When we make functions that are global to the project, as it happens to the Window namespace.
+
+
+John Bryce, Dov Zilberman, ASP.Net, Authorization
+
+
+https://www.youtube.com/watch?v=_pFbhhNmXp4
+https://www.youtube.com/watch?v=sTr9OFLquVg
+https://www.youtube.com/watch?v=F_luxWKreyc
+https://www.youtube.com/watch?v=B7sa6l8ANQ8
+https://www.youtube.com/watch?v=-SwGa_4HgWE
+https://www.youtube.com/watch?v=fzO5S-nIIqg
+https://www.youtube.com/watch?v=osk0lU5fr4A
+https://www.youtube.com/watch?v=0WzmcpHkJ1E
+https://www.youtube.com/watch?v=GzJrKeDzOGc
+
+
+
+
+
+
+
+
+
+
+
+
+

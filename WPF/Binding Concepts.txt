@@ -1,0 +1,34 @@
+Binding Concepts:
+-----------------
+
+1-21-2016
+- Binding is always done to functions (hence Get is needed)
+
+- DataContext: When the system doesn't find the source, it looks for it in DataContext
+
+- Binding also has a default. After of the constructorter the word Binding, we pass on the parameter. 
+
+- When we declare something in XAML we're newing something. This principle applies not only to Binding, but to all Xaml declarations.
+
+- Converter is used when we pass info from source to target and back during Binding.
+
+- When we implement INotify the public properties send info to the controls.
+
+- To create a Converter we have to implement IValueConverter. Hence we need to implement the object functions Convert and ConvertBack.
+
+- Convert can be declared in Xaml. E.g.:
+    <Window.Resources>
+        <cvt:ShekelDollarConverter x:Key="s2dcvt"/>
+        <cvt:CityConverter x:Key="cityCvt" />
+    </Window.Resources>
+    
+    And then it can be used as follows:
+    <TextBox Text="{Binding CityID, Converter={StaticResource cityCvt}}" />
+    
+
+Windows Resource Protection did not find any integrity violations.
+
+
+
+* Do same stuff but with just a List<Member> with some 3 members.
+

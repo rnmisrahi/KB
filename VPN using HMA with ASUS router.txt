@@ -5,6 +5,7 @@ B: The HMA website is used to determine the correct VPN Address, which needs to 
 
 A: Modem
 The IP address we have now is the default: 192.168.1.1usr/pwd are the default as well: admin/admin
+The last time I modified the login to the modem to admin/Smcecq8a
 
 The instructions on how to setup the modem are clearly explained in this website:
 https://support.hidemyass.com/hc/en-us/articles/204449557-Asus-VPN-Client-Setup-Original-firmware-
@@ -13,10 +14,36 @@ B: HMA
 The HMA site is: https://vpn.hidemyass.com/vpncontrol/signin
 usr/pwd is rnmisrahi/Uladi111
 
+
+
+
 The HMA site refers to this site and explains how to go about selecting the VPN we want to use.
 The name of the HMA server has this form: <state>.us.hma.rocks or random.<state>.us.hma.rocks, like
 al.us.hma.rocks for Alabama or
 random.us.ca.hma.rocks
+
+The username/password to select a Server is: rnmisrahi/SVyQmhXd
+
+
+
+Instructions to set it directly with LTP2:
+https://support.hidemyass.com/hc/en-us/articles/204456367-Asus-WAN-Connection-Setup-Original-firmware-
+
+
+
+Virtual London: 185.25.85.192
+
+NJ Clifton L1 S11 50.60.128.58
+
+NJ CLifton L1 S5	65.98.56.202
+NJ Newark L1 S8		208.167.255.3
+NJ Clifton L1 S2	65.98.97.170
+NJ Newark L1 S9		208.167.255.131
+
+
+
+meytalya@jbc.co.il
+
 
 
 

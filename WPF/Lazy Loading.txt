@@ -1,0 +1,67 @@
+Lazy Loading
+------------
+
+We want to use lazy loading when possible, because it loads the objects only when needed. On demand.
+
+An excellent example can be found here:
+http://www.codeproject.com/Articles/652556/Can-you-explain-Lazy-Loading
+
+Basically:
+This customer doesn't implement Lazy Loading:
+public class Customer
+{
+	private List<Order> _Orders= null;
+	…
+	…
+	public Customer()
+	{
+        _CustomerName = "Shiv";
+        _Orders = LoadOrders(); // Loads the order object even though //not needed
+	}
+     
+	private List<Order> LoadOrders()
+	{
+        List<Order> temp = new List<Order>();
+        Order o = new Order();
+        o.OrderNumber = "ord1001";
+        temp.Add(o);
+        o = new Order();
+        o.OrderNumber = "ord1002";
+        temp.Add(o);
+        return temp;
+	}
+} 
+
+If we want to implement Lazy Loading, we need to express this as follows:
+public class Customer
+{
+    private List<Order> _Orders= null;
+    …
+    …
+    public Customer()
+    {
+        _CustomerName = "Shiv";
+    }
+    public List<Order> Orders
+    {
+	    get 
+        {
+            if (_Orders == null)
+            {
+                _Orders = LoadOrders();
+            }
+            return _Orders; 
+        }
+    }
+}
+
+And then, when we use it (when we need it)...
+Customer o = new Customer(); // order object not loaded
+Console.WriteLine(o.CustomerName);
+foreach (Order o1 in o.Orders) // Load order object only at this moment
+{
+    Console.WriteLine(o1.OrderNumber);
+}
+
+
+    

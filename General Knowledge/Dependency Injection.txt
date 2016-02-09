@@ -1,0 +1,112 @@
+Dependency Injection
+--------------------
+
+http://www.codeproject.com/Articles/615139/An-Absolute-Beginners-Tutorial-on-Dependency-Inver
+
+Dependency inversion was a software design principle, it just states that how two modules should depend on each other.
+
+Dependency inversion principle is a software design principle which provides us the guidelines to write loosely coupled classes.
+
+Three types of dependency injection:
+- Constructor Injection
+- Setter Injection
+- Interface Injection
+
+
+- Constructor Injection:
+  -----------
+public interface INotificationAction
+{
+    public void ActOnNotification(string message);
+}
+
+class EventLogWriter : INotificationAction //A Concrete class that implements INotificationAction
+{   
+    public void ActOnNotification(string message)
+    {
+        // Write to event log here
+    }
+}
+
+class EmailSender : INotificationAction //Another example of an impementation of INotification
+{
+    public void ActOnNotification(string message)
+    {
+        // Send email from here
+    }
+}
+
+class AppPoolWatcher
+{
+    // Handle to EventLog writer to write to the logs
+    INofificationAction action = null;
+
+    public AppPoolWatcher(INofificationAction concreteImplementation)
+    {
+        this.action = concreteImplementation;
+    }
+
+    // This function will be called when the app pool has problem
+    public void Notify(string message)
+    {   
+        action.ActOnNotification(message);
+    }
+}
+
+//This is how we call watcher.Notify: 
+// The implementation is left to the injected EventLogWriter or EmailSender
+AppPoolWatcher watcher = new AppPoolWatcher(new EventLogWriter());
+watcher.Notify("Sample message to log");
+
+
+- Method Injection:
+  ------
+class AppPoolWatcher
+{
+    // Handle to EventLog writer to write to the logs
+    INofificationAction action = null;
+
+    // This function will be called when the app pool has problem
+    public void Notify(INofificationAction concreteAction, string message)
+    {
+        this.action = concreteAction;
+        action.ActOnNotification(message);
+    }
+}
+
+//This is how we call watcher.Notify: 
+// The implementation is left to the injected EventLogWriter or EmailSender
+AppPoolWatcher watcher = new AppPoolWatcher();
+watcher.Notify(new EventLogWriter(), "Sample message to log");
+
+
+- Property Injection:
+  --------
+class AppPoolWatcher
+{
+    // Handle to EventLog writer to write to the logs
+    INofificationAction action = null;
+
+    public INofificationAction Action
+    {
+        get{ return action; }
+        set{ action = value; }
+    }
+
+    // This function will be called when the app pool has problem
+    public void Notify(string message)
+    {   
+        action.ActOnNotification(message);
+    }
+}
+
+//This is how we call watcher.Notify: 
+// The implementation is left to the injected EventLogWriter or EmailSender
+EventLogWriter writer = new EventLogWriter();
+AppPoolWatcher watcher = new AppPoolWatcher();
+// This can be done in some class
+watcher.Action = writer;
+
+// This can be done in some other class
+watcher.Notify("Sample message to log");
+

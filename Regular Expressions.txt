@@ -1,0 +1,23 @@
+Regular Expressions
+-------------------
+
+Used to filter, compile and manipulate strings.
+http://www.tutorialspoint.com/csharp/csharp_character_classes.htm
+
+
+
+Basic, more common expressions:
+
+Character class			| 	Description	 | 	Pattern	 | 	Matches
+[character_group]		| 	Matches any single character in character_group. By default, the match is case-sensitive.	 | 	[mn]	 | 	"m" in "mat" "m", "n" in "moon"
+[^character_group]	| 	Negation: Matches any single character that is not in character_group. By default, characters incharacter_group are case-sensitive.	 | 	[^aei]	 | 	"v", "l" in "avail"
+[ first - last ]		| 	Character range: Matches any single character in the range from first to last.	 | 	[b-d]	 | 	[b-d]irds Birds Cirds Dirds
+.										| 	Wildcard: Matches any single character except \n.	 | 	a.e	 | 	"ave" in "have" "ate" in "mate"
+\p{ name }					| 	Matches any single character in the Unicode general category or named block specified by name.	 | 	\p{Lu}	 | 	"C", "L" in "City Lights"
+\P{ name }					| 	Matches any single character that is not in the Unicode general category or named block specified by name.	 | 	\P{Lu}	 | 	"i", "t", "y" in "City"
+\w	 								| 	Matches any word character.	 | 	\w	 | 	"R", "o", "m" and "1" in "Room#1"
+\W	 								| 	Matches any non-word character.	 | 	\W	 | 	"#" in "Room#1"
+\s	 								| 	Matches any white-space character.	 | 	\w\s	 | 	"D " in "ID A1.3"
+\S	 								| 	Matches any non-white-space character.	 | 	\s\S	 | 	" _" in "int __ctr"
+\d	 								| 	Matches any decimal digit.	 | 	\d	 | 	"4" in "4 = IV"
+\D	 								| 	Matches any character other than a decimal digit.	 | 	\D	 | 	" ", "=", " ", "I", "V" in "4 = IV"

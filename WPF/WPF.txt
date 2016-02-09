@@ -26,7 +26,7 @@ There are Content Controls that can contain other controls
 It inherits the class ContentControl
 
 
-Content Controls: They can congain only one control
+Content Controls: They can contain only one control
 Window, Button, CheckBox, 
 
 Children Control - They contain several controls
@@ -36,9 +36,7 @@ Text Control
 Text
 
 
-
 ContentControl is an Abstract Class. Nevertheless we can put one in a window.
-
 
 
 Attached Property
@@ -46,6 +44,31 @@ This is used by Canvas. It has a dictionary for all the controls in it with the 
 There is a dictionary for Left, one for right, etc. for Canvas
 
 
+Miscellaneous Features:
+
+- Rotation:
+	Controls can rotate. For instance:
+	  <Button.RenderTransform >
+      <RotateTransform Angle="15"/>
+    </Button.RenderTransform >
+  We can also define the axis, but as a parameter of the control
+    Button.RenderTransformOrigin="1,1" //0,0 is the upper left corner, 0,1 lower left
+
+- Within the <Window> element we can link events to controls in general.
+	For instance, we can set it as follows:
+	<Window ... MouseRightButtonDown="Dialog_RB"...
+	and have in the code:
+	 void Dialog_RB(object sender, MouseButtonEventArgs e){
+	 		Control source = e.Source as Control;
+	 		source.BorderThickness = new Thickness(5);
+	 }
+	 
+	The event can be on specific control types:
+	<Window... Button.Click="Button_Click" ListBox.SelectionChanged="Box_Selected" 
+	The code would reflect that:
+	void Button_Click(object sender, RoutedEventArgs e){...}
+	void Box_Selected(object sender, SelectionChangedEventArgs e)
+	
 
 
 

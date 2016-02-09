@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Dataset and DataReader", "1.Dataset and DataReader\1.Dataset and DataReader.csproj", "{7E382B70-2B4E-464E-A51E-5831D37D76AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4a.DataView", "4a.DataView\4a.DataView.csproj", "{CBEC7930-2E90-4893-A42A-124241876735}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.CommandBuilder", "5.CommandBuilder\5.CommandBuilder.csproj", "{D5466117-85C4-48E1-8845-69BFB8169881}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E382B70-2B4E-464E-A51E-5831D37D76AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E382B70-2B4E-464E-A51E-5831D37D76AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E382B70-2B4E-464E-A51E-5831D37D76AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E382B70-2B4E-464E-A51E-5831D37D76AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBEC7930-2E90-4893-A42A-124241876735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEC7930-2E90-4893-A42A-124241876735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEC7930-2E90-4893-A42A-124241876735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEC7930-2E90-4893-A42A-124241876735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5466117-85C4-48E1-8845-69BFB8169881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5466117-85C4-48E1-8845-69BFB8169881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5466117-85C4-48E1-8845-69BFB8169881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5466117-85C4-48E1-8845-69BFB8169881}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

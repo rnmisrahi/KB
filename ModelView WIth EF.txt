@@ -1,0 +1,33 @@
+How to Create a ModelView Application
+-------------------------------------
+
+
+Create Plain Project DataLibrary
+Create Plain Project ModelLibrary
+Create an empty MVC project
+
+DataLibrary: Add EntityFramework
+DataLibrary: Add ADO.NET Entity Data Model. Categories from NW. Call it NWModel
+Model Library: Add an EF 6.x DbContextGenerator. Call it NWModel.tt
+Model Library: Delete NWModelContext.tt
+ML: in NWModel.cs replace $edmxInputFile$ for ..\DataLibrary\NWModel.edmx
+Save	
+DL: Delete NWModel.tt
+DL: Make a Reference to ML
+DL: Create a class called Repository
+	public static class Repository
+	{
+		public static IEnumerable<Category> GetCategories
+		{
+			NorthwindEntities context = new NorthwindEntities();
+			retutn context.Categories;
+		}
+	}
+There will be syntax errors
+DL: In NWModel.Context.tt set the Custom Tool Namespace to ModelLibrary
+Compile
+Now create the Controller and the View
+
+
+
+
