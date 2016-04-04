@@ -1,7 +1,67 @@
 
-
-
 8. Mulicast delegate
 https://msdn.microsoft.com/en-us/library/ms173175.aspx
 
 
+TempData How to use it:
+http://sampathloku.blogspot.co.il/2012/09/how-to-use-aspnet-mvc-tempdata-properly.html
+
+
+Change Server Authentication Mode
+https://technet.microsoft.com/en-us/library/ms188670(v=sql.110).aspx#SSMSProcedure
+
+
+How to Reset SA Password in Sql Server
+http://www.wikihow.com/Reset-SA-Password-in-Sql-Server
+
+
+When publishing with migration changes, we often need to add this line:
+AutomaticMigrationDataLossAllowed = true;
+To Migrations/Configuration.cs in the Configuration method
+
+
+When scaffolding date or time:
+1. It's best to have 2 fields, one for date and one for time.
+2. Chrome adds its own DatePicker, so when editing it will show a blank date/time even when there is data there. Running on IE it looks fine.
+
+
+Migrations
+In this very fragile technology we often need to 
+1. Run -Force when migrating
+2. We also need to rerun the scaffolding
+3. if a nullable field becomes Non-nullable, we need to affect the DB before we run the migration, adding data to non-nullable fields.
+4. We can always delete the DB and run again.
+
+To reset migrations, see this site:
+http://stackoverflow.com/questions/11679385/reset-entity-framework-migrations
+http://weblog.west-wind.com/posts/2016/Jan/13/Resetting-Entity-Framework-Migrations-to-a-clean-Slate
+
+
+Database Name
+We can modify the Connection string to something like:
+    <add name="DefaultConnection" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Glucose.mdf;Initial Catalog=Glucose;Integrated Security=True" providerName="System.Data.SqlClient" />
+
+
+Portals - Areas
+Visual Studio offers Areas. where we can isolate some of the functionality and where users can be added.
+See Chapter 11: Ensuring separation of concerns at Lynda.com:
+http://www.lynda.com/ASP-NET-tutorials/Simplifying-complex-application-areas/109762/120324-4.html
+
+Export Scripts
+In MS SMS (Server Management Studio)
+Right-Click on a DB -> Tasks -> Generate Scripts Wizard
+At Set Scripting Options Select Advance Options
+In Types Of Data select Schema, Data or Both
+
+
+Linking to another method of the same Controller:
+I realized that we can pass on several parameters.
+Typically in cases like Edit, we pass the id, which then let's the Controller extract the item from the DB and then deal with it. Sometimes we need more info and it is passed as in this example:
+@Html.ActionLink("Make a Reservation", "Details", new { id = item.CarId, StartDate=Model.StartDate, EndDate=Model.EndDate })
+The funny thing is that the receiving end has to match the actual name of the variable (Reflection of course. Who the heck designed this?)
+
+
+Facebook Login:
+https://developers.facebook.com/apps/
+This Lynda.com course explains it well in the Security Section (5):
+http://www.lynda.com/ASP-NET-tutorials/Authenticating-users-Facebook/170334/191125-4.html

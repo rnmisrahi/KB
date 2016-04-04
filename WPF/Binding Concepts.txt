@@ -2,7 +2,7 @@ Binding Concepts:
 -----------------
 
 1-21-2016
-- Binding is always done to functions (hence Get is needed)
+- Binding is always done through functions (hence Get/Set are needed)
 
 - DataContext: When the system doesn't find the source, it looks for it in DataContext
 

@@ -28,6 +28,28 @@ DL: In NWModel.Context.tt set the Custom Tool Namespace to ModelLibrary
 Compile
 Now create the Controller and the View
 
+Regarding the name of the DB created:
+The ConnectionString in the Web.config file follows this rule as far as I can see:
+  <connectionStrings>
+    <add name="AuctionsDataContext" connectionString="Data Source=.\SqlExpress;Initial Catalog=Lynda-EF-Auction;Integrated Security=SSPI" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+If the name is set to the name of the actual Context class... In this example I have AuctionsDataContext from:
+    public class AuctionsDataContext:DbContext
+Then... We can set the name in the Initial Catalog. In this case:
+Initial Catalog=Lynda-EF-Auction;
 
+If the name doesn't coincide, then the name is taken from the path:
+<Project>.<Models>.<Context name>
+So, a name such as:
+    <add name="AuctionsXXXDataContext" connectionString="Data Source=.\SqlExpress;Initial Catalog=Lynda-EF-Auction;Integrated Security=SSPI" providerName="System.Data.SqlClient" />
+Will generate a DB with this name:
+MvcAuction.Models.AuctionsDataContext
+
+- Adding a foreign key with Code First migration
+	http://stackoverflow.com/questions/13650257/adding-a-foreign-key-with-code-first-migration
+	Migration needs to be done in 2 stages. One where we define the FK as int?, then populate the info and then migrate again with int.
+	
+Here's a good site that explains Code First migrations:
+https://msdn.microsoft.com/en-us/data/jj591621
 
 

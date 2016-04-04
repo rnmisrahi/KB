@@ -1,0 +1,85 @@
+Publishing to Azure with Database
+---------------------------------
+
+We need to set Azure so it recognizes our IP before we publish:
+How to: Configure firewall settings on SQL Database using the Azure Portal
+THIS is the definite link to follow
+https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
+
+https://azure.microsoft.com/en-gb/documentation/articles/sql-database-configure-firewall-settings/
+
+http://www.asp.net/mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on#goog
+
+This shows how to migrate a DB to Azure
+https://azure.microsoft.com/en-us/documentation/articles/sql-database-cloud-migrate/
+
+Move your SQL Server Databases to Windows Azure SQL
+https://blogs.technet.microsoft.com/cbernier/2013/09/11/move-your-sql-server-databases-to-windows-azure-sql/
+
+---------- Regarding the MSSQL database. 
+In case we want to change our password or add users: this is the link:
+http://www.wikihow.com/Reset-SA-Password-in-Sql-Server
+Use step 2:
+
+1. Open SSMS management console. This is usually under Start -> All Programs -> Microsoft SQL Server 2014 -> SQL Server Management Studio Express.
+2. Connect to your instance of SQL Server via Windows Authentication.
+3. Once open, navigate to “Logins” object under the “Security”. Once expanded, right-click on the ‘SA’ user, and choose Properties.
+		Or add a new login and give it all rights
+
+------------------------------------
+
+The Azure Portal changes continuosly, we need to find the place where our IP (which changes frequently) is accepted.
+
+
+
+g2ojj5kj5y.database.windows.net,1433
+
+ADO.Net:
+Server=tcp:g2ojj5kj5y.database.windows.net,1433;Database=CarRental01;User ID=rnmisrahi@g2ojj5kj5y;Password=Uladi11!;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;
+
+ODBC:
+Driver={SQL Server Native Client 10.0};Server=tcp:g2ojj5kj5y.database.windows.net,1433;Database=CarRental01;Uid=rnmisrahi@g2ojj5kj5y;Pwd={your_password_here};Encrypt=yes;Connection Timeout=30;
+
+
+DB: g2ojj5kj5y
+Current Client IP Address: 213.8.204.26
+
+
+Server Name: g2ojj5kj5y.database.windows.net
+
+Data Source=g2ojj5kj5y.database.windows.net;Initial Catalog=CarRental01;User ID=rnmisrahi;Password=Smcecq8a
+Data Source=g2ojj5kj5y.database.windows.net;Initial Catalog=CarRental01;User ID=rnmisrahi;Password=Smcecq8a
+
+
+
+testdb14.scm.azurewebsites.net:443
+Data Source=tcp:g2ojj5kj5y.database.windows.net;Initial Catalog=CarRental01;User ID=rnmisrahi;Password=Smcecq8a
+
+webapplication1520160217120705.scm.azurewebsites.net:443
+Data Source=g2ojj5kj5y.database.windows.net;Initial Catalog=CarRental01;User ID=rnmisrahi;Password=Smcecq8a
+
+
+Server=tcp:g2ojj5kj5y.database.windows.net,1433;Database=FirstDb;User ID=rnmisrahi@g2ojj5kj5y;Password={your_password_here};Trusted_Connection=False;Encrypt=True;Connection Timeout=30;
+
+Data Source=g2ojj5kj5y.database.windows.net,1433;Initial Catalog=FirstDb;User ID=rnmisrahi;Password=Smcecq8a
+
+Data Source=g2ojj5kj5y.database.windows.net,1433;Initial Catalog=FirstDb;User ID=rnmisrahi;Password=Smcecq8a
+
+31.154.94.12
+sql db azure client with ip address... is not allowed to access the server. to enable acceess, use the azure management portal 
+
+
+Server=tcp:g2ojj5kj5y.database.windows.net,1433;Database=JBCarRental;User ID=rnmisrahi@g2ojj5kj5y;Password=Smcecq8a;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;
+
+  <add name="DefaultConnection" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-CarRental02-20160221031208.mdf;Initial Catalog=CarRental02;Integrated Security=True" providerName="System.Data.SqlClient" />
+  
+carrental0220160301094434.scm.azurewebsites.net:443
+
+
+
+Server=tcp:g2ojj5kj5y.database.windows.net,1433;Database=JBCarRental;User ID=rnmisrahi@g2ojj5kj5y;Password={your_password_here};Trusted_Connection=False;Encrypt=True;Connection Timeout=30;
+
+Data Source=g2ojj5kj5y.database.windows.net;Initial Catalog=JBCarRental;User ID=rnmisrahi;Password=Smcecq8a
+
+  
+  connectionString="Server=tcp:g2ojj5kj5y.database.windows.net,1433; Database=JBCarRental; Connection Timeout=30; Encrypt=True; TrustServerCertificate=False;"

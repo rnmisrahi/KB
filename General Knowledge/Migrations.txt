@@ -1,0 +1,26 @@
+Migrations
+----------
+https://coding.abel.nu/2012/03/ef-migrations-command-reference/
+
+This is a very powerfull tool that helps us update our database as it changes.
+
+The Migrations\Configuration.cs constructor hast to have this line:
+        public Configuration()
+        {
+        		//automatic migrations will be enabled in the scaffolded migrations configuration.
+            AutomaticMigrationsEnabled = true;
+        }
+
+The way we set it to work, after we have created a database is by using the Tools > Nugget Package Manager > Package Manager Console
+Her we initialize the migrations by entering
+> Enable-Migrations
+Then:
+> Add-Migration <name>
+This Scaffolds a migration script for any pending model changes
+
+> Update-Database
+Applies any pending migrations to the database.
+
+> Get-Migrations
+Displays the migrations that have been applied to the target database.
+

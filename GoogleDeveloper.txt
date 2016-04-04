@@ -1,0 +1,12 @@
+Login using Google's GMail
+--------------------------
+
+If we want users to login using GMail, we need to add to our app a Client ID and a secret.
+
+https://console.developers.google.com
+
+OAuth client
+Here is your client ID
+579610357083-uaiuj5ijvrmrga47pits9o989d7mvm5m.apps.googleusercontent.com
+Here is your client secret
+Ppm7zlm8L3i_UlFMkOsUWQWe

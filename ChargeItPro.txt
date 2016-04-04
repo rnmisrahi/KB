@@ -1,0 +1,19 @@
+The usr/pwd for my local ChargeItProServer is cipadmin/Uladi111
+
+When downloading ChargeItPro and we don't remember the usr/pwd, reset and use cip/cip
+
+
+To download documentation and software from ChargeitPro, use this site:
+http://dev.chargeitpro.com/Daux.io/index.php?request=Resources/Sample%20Code%20Demos
+or
+http://dev.chargeitpro.com/Daux.io/index.php?request=Resources/Sample%20Code%20Demos
+and this usr/pwd: pppinc/partner
+
+
+Test card:
+%B4019123456789016^PUBLIC/JOHN Q^170510110000?;4019123456789016=170510110000?
+
+
+The app to generate an exe is called Launch4j.exe
+Instructions here:
+http://www.wikihow.com/Create-an-Executable-File-from-Eclipse
